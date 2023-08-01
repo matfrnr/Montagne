@@ -1,0 +1,88 @@
+@font-face {
+    font-family: Inter;
+    src: url(../fonts/Inter-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: Merri;
+    src: url(../fonts/Merriweather-Light.ttf);
+}
+
+$font1: Inter, sans-serif;
+$font2: Merri, serif;
+$black1: rgb(17, 17, 17);
+$white: rgb(243, 243, 243);
+$grey1: rgb(209, 209, 209);
+$grey2: rgb(233, 233, 233);
+$grey3: rgb(105, 105, 105);
+
+@mixin title {
+    font-family: $font1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url(../img/bg.jpg) center / cover fixed;
+    font-family: $font2;
+    text-align: center;
+    font-family: $font2;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: $black1;
+        animation: animebefore 1.5s ease forwards;
+        animation-delay: 0.15s;
+
+        @keyframes animebefore {
+            to {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+button {
+    background: none;
+    border: 2px solid $black1;
+    height: 45px;
+    width: 170px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    @include title;
+
+    &:hover {
+        transform: scale(1.05);
+        transition: 0.2s;
+    }
+}
+
+li {
+    list-style: none;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: $white;
+}

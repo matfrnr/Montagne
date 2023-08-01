@@ -1,0 +1,128 @@
+header {
+    min-height: 100vh;
+    color: $white;
+    position: relative;
+
+    .contenu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+        opacity: 0;
+        transform: translateY(40px);
+        animation: header 1.5s forwards;
+
+        @keyframes header {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            @include title;
+            font-size: 4rem;
+            letter-spacing: 6px;
+
+            @media screen and (max-width: 800px) {
+                font-size: 2.5rem;
+            }
+            @media screen and (max-width: 500px) {
+                font-size: 1.7rem;
+            }
+        }
+
+        p {
+            margin: 40px auto 60px;
+            font-style: italic;
+            width: 80%;
+        }
+
+        span {
+            border: 2px solid $white;
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.25);
+        color: $white;
+        width: 85%;
+        height: 65px;
+        z-index: 5;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        ul {
+            display: flex;
+        }
+
+        .navGauche {
+            height: 100%;
+
+            &:hover li:not(:hover) {
+                background: none;
+                color: $white;
+            }
+
+            li {
+                @include title;
+                font-size: 0.7rem;
+                padding: 0 15px;
+                height: 100%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+
+                @media screen and (max-width: 750px) {
+                    font-size: 0.5rem;
+                }
+
+                @media screen and (max-width: 380px) {
+                    font-size: 0.4rem;
+                }
+
+                &:first-child {
+                    background: white;
+                    color: $black1;
+                }
+                &:hover {
+                    background: white;
+                    color: $black1;
+                }
+            }
+        }
+        .navDroite {
+            font-size: 1.1rem;
+
+            li {
+                padding: 0 25px;
+                cursor: pointer;
+
+                @media screen and (max-width: 900px) {
+                    padding: 0 10px;
+                    font-size: 0.8rem;
+                }
+
+                @media screen and (max-width: 650px) {
+                    display: none;
+                }
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}

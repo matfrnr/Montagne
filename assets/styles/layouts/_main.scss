@@ -1,0 +1,124 @@
+main {
+    background: #f3f3f3;
+    width: 85%;
+    margin: 0 auto 30px;
+
+    img {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .secOne {
+        border-bottom: 1px solid $grey1;
+
+        h2 {
+            @include title;
+            font-size: 3rem;
+            margin-bottom: 35px;
+
+            @media screen and (max-width: 800px) {
+                font-size: 2rem;
+            }
+
+            @media screen and (max-width: 600px) {
+                font-size: 1.5rem;
+            }
+        }
+
+        p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            margin: 50px 0 70px;
+        }
+
+        .desc {
+            width: 50%;
+            line-height: 35px;
+            margin: 0 auto 30px;
+            font-style: italic;
+            font-size: 0.8rem;
+
+            @media screen and (max-width: 1080px) {
+                font-size: 0.7rem;
+                line-height: 20px;
+                width: 60%;
+            }
+
+            @media screen and (max-width: 800px) {
+                font-size: 0.7rem;
+                line-height: 20px;
+                width: 70%;
+            }
+
+            @media screen and (max-width: 600px) {
+                font-size: 0.6rem;
+                line-height: 20px;
+                width: 80%;
+            }
+        }
+
+        .date {
+            padding: 25px 0 10px;
+
+            &:before,
+            &::after {
+                content: "";
+                height: 1px;
+                width: 37%;
+                background: $grey1;
+                margin: 3%;
+
+                @media screen and (max-width: 1000px) {
+                    width: 30%;
+                }
+                @media screen and (max-width: 600px) {
+                    width: 25%;
+                }
+            }
+        }
+    }
+    .secTwo {
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        @media screen and (max-width: 800px) {
+            display: block;
+        }
+
+        div {
+            padding: 50px 0;
+
+            @media screen and (max-width: 800px) {
+                padding: 20px 0;
+            }
+
+            &:nth-child(1) {
+                border-right: 1px solid $grey1;
+            }
+        }
+
+        h2 {
+            margin: 20px 0 30px;
+            @include title;
+            font-size: 1.3rem;
+        }
+
+        .date {
+            font-size: 0.7rem;
+        }
+
+        .desc {
+            text-align: left;
+            font-size: 0.8rem;
+            line-height: 30px;
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+    }
+}
